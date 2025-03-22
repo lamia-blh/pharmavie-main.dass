@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title> site web Biopharm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <div class="site-wrap">
+
+    <div id="header"></div>
+    <script>
+      fetch('shared/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header').innerHTML = data;
+          const currentPath = window.location.pathname.split('/').pop();
+          const menuItems = document.querySelectorAll('.site-menu a');
+          menuItems.forEach(item => {
+            if (item.getAttribute('href') === currentPath) {
+              item.parentElement.classList.add('active');
+            } else {
+              item.parentElement.classList.remove('active');
+            }
+          });
+        })
+        .catch(error => console.error('Erreur lors du chargement de l\'en-tête:', error));
+    </script>
+
+    <!-- Remove the breadcrumb navigation -->
+    <!-- <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0"><a href="index.html">Home</a> <span class="mx-2 mb-0">/</span> <strong class="text-black">Store</strong></div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="site-section">
+      <div class="container">
+        <!-- Add category title -->
+        <div class="row mb-4">
+          <div class="col-12">
+            <h2 class="category-title">Tous les produits</h2>
+          </div>
+        </div>
+        <!-- Products container -->
+        <div class="row" id="medicaments-list">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-12 text-center">
+            <div class="site-block-27">
+              <ul id="pagination-controls">
+                <!-- Pagination controls will be generated dynamically -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const ITEMS_PER_PAGE = 6;
+        let currentPage = 1;
+        let allMedicaments = [];
+        let filteredMedicaments = [];
+
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category');
+        const searchTerm = urlParams.get('search');
+        const page = parseInt(urlParams.get('page')) || 1;
+
+        // Update category title
+        const categoryTitle = document.querySelector('.category-title');
+        if (categoryTitle) {
+          if (searchTerm) {
+            categoryTitle.textContent = `Résultats de recherche pour "${searchTerm}"`;
+          } else {
+            categoryTitle.textContent = category ? category : 'Tous les produits';
+          }
+        }
+
+        // Filter products function - make it globally available
+        window.filterProducts = function(searchTerm) {
+          if (!searchTerm) {
+            filteredMedicaments = [...allMedicaments];
+          } else {
+            searchTerm = searchTerm.toLowerCase();
+            filteredMedicaments = allMedicaments.filter(med => 
+              med.name.toLowerCase().includes(searchTerm)
+            );
+          }
+          
+          // Update title
+          if (categoryTitle) {
+            categoryTitle.textContent = searchTerm ? `Résultats de recherche pour "${searchTerm}"` : (category ? category : 'Tous les produits');
+          }
+
+          // Reset to first page and display results
+          currentPage = 1;
+          displayProducts(currentPage);
+          updatePagination(filteredMedicaments.length);
+
+          // Update URL without reloading
+          const url = new URL(window.location);
+          if (searchTerm) {
+            url.searchParams.set('search', searchTerm);
+          } else {
+            url.searchParams.delete('search');
+          }
+          window.history.pushState({}, '', url);
+        };
+
+        function displayProducts(page) {
+          const container = document.getElementById('medicaments-list');
+          const start = (page - 1) * ITEMS_PER_PAGE;
+          const end = start + ITEMS_PER_PAGE;
+          const paginatedItems = filteredMedicaments.slice(start, end);
+          
+          container.innerHTML = '';
+          
+          if (paginatedItems.length === 0) {
+            container.innerHTML = `
+              <div class="col-12 text-center">
+                <p>Aucun produit trouvé.</p>
+              </div>
+            `;
+            return;
+          }
+          
+          paginatedItems.forEach(medicament => {
+            const item = document.createElement('div');
+            item.className = 'col-sm-6 col-lg-4 text-center item mb-4';
+            item.innerHTML = `
+              <div class="card shadow-sm" style="border-radius: 10px; overflow: hidden;">
+                <a href="shop-single.html?img=${encodeURIComponent(medicament.image)}&name=${encodeURIComponent(medicament.name)}&price=${encodeURIComponent(medicament.price)}&description=${encodeURIComponent(medicament.description)}">
+                  <img src="${medicament.image}" class="card-img-top" alt="${medicament.name}" style="height: 200px; object-fit: cover;">
+                </a>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <a href="shop-single.html?img=${encodeURIComponent(medicament.image)}&name=${encodeURIComponent(medicament.name)}&price=${encodeURIComponent(medicament.price)}&description=${encodeURIComponent(medicament.description)}" class="text-dark">
+                      ${medicament.name}
+                    </a>
+                  </h5>
+                  <p class="price text-primary font-weight-bold">$${medicament.price.toFixed(2)}</p>
+                  <p class="category-tag text-muted"><small>${medicament.category}</small></p>
+                </div>
+              </div>
+            `;
+            container.appendChild(item);
+          });
+        }
+
+        function updatePagination(totalItems) {
+          const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+          const paginationControls = document.getElementById('pagination-controls');
+          
+          let paginationHTML = `<li><a href="#" data-page="${currentPage - 1}">&lt;</a></li>`;
+          
+          for (let i = 1; i <= totalPages; i++) {
+            if (i === currentPage) {
+              paginationHTML += `<li class="active"><span>${i}</span></li>`;
+            } else {
+              paginationHTML += `<li><a href="#" data-page="${i}">${i}</a></li>`;
+            }
+          }
+          
+          paginationHTML += `<li><a href="#" data-page="${currentPage + 1}">&gt;</a></li>`;
+          paginationControls.innerHTML = paginationHTML;
+
+          // Add click handlers
+          paginationControls.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+              e.preventDefault();
+              const newPage = parseInt(e.target.dataset.page);
+              if (newPage > 0 && newPage <= totalPages) {
+                currentPage = newPage;
+                displayProducts(currentPage);
+                updatePagination(filteredMedicaments.length);
+                window.scrollTo(0, 0);
+              }
+            });
+          });
+        }
+
+        // Fetch and display products
+        fetch('medicaments.json')
+          .then(response => response.json())
+          .then(medicaments => {
+            allMedicaments = medicaments;
+            
+            // Apply initial filters
+            if (category) {
+              filteredMedicaments = medicaments.filter(med => med.category === category);
+            } else {
+              filteredMedicaments = [...medicaments];
+            }
+
+            if (searchTerm) {
+              filterProducts(searchTerm);
+            } else {
+              displayProducts(currentPage);
+              updatePagination(filteredMedicaments.length);
+            }
+          })
+          .catch(error => {
+            console.error('Erreur lors du chargement des médicaments:', error);
+            document.getElementById('medicaments-list').innerHTML = `
+              <div class="col-12 text-center">
+                <p>Erreur de chargement des produits. Veuillez réessayer plus tard.</p>
+              </div>
+            `;
+          });
+      });
+    </script>
+
+    <div class="site-section bg-secondary bg-image" style="background-image: url('images/bg_2.jpg');">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_1.jpg');">
+             
+            </a>
+          </div>
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_2.jpg');"></a>
+              <div class="banner-1-inner ml-auto  align-self-center">
+                <h2>"Contrôle qualité par des experts"</h2>
+                <p> "Nos produits sont rigoureusement testés et fabriqués selon les normes les plus strictes pour garantir votre sécurité et efficacité." </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+            <div class="block-7">
+              <h3 class="footer-heading mb-4">À propos de nous</h3>
+              <p>Biopharm, fondé en 1991, est un groupe pharmaceutique algérien détenant 13 % du marché et exportant en Afrique. Il fabrique 130 produits et est certifié aux normes européennes.</p>
+            </div>
+
+          </div>
+          <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+            <h3 class="footer-heading mb-4">Liens rapides</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://www.facebook.com/laboratoiresbiopharm" target="_blank">Facebook</a></li>
+              <li><a href="https://www.instagram.com/leslaboratoiresbiopharm/" target="_blank">Instagram</a></li>
+              <li><a href="https://dz.linkedin.com/company/biopharmdz" target="_blank">LinkedIn</a></li>
+              <li><a href="https://www.youtube.com/@laboratoiresbiopharm1348" target="_blank">YouTube</a></li>
+            </ul>
+          </div>
+
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-5 mb-5">
+              <h3 class="footer-heading mb-4">Infos de contact</h3>
+              <ul class="list-unstyled">
+                <li class="address"><a href="https://www.google.com/maps/search/?api=1&query=18%2C%20rue%20de%20zone%20industrielle%20route%20de%20la%20gare%2C%20Houch%20Mahiéddine%2C%20Reghaia%20-%20Alger%2016000%2C%20Algerie.." target="_blank">18, rue de zone industrielle route de la gare, Houch Mahiéddine, Reghaia - Alger 16000, Algerie..</a></li>
+                <li class="phone"><a href="tel:0238510109">023 85 10 109</a></li>
+                <li class="email"><a href="mailto:pharmavie@gmail.com">contact@biopharm.dz</a></li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

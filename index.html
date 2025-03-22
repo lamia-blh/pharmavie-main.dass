@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> site web Biopharm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <div class="site-wrap">
+    <div id="header"></div>
+    <script>
+      fetch('shared/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header').innerHTML = data;
+          const currentPath = window.location.pathname.split('/').pop();
+          const menuItems = document.querySelectorAll('.site-menu a');
+          menuItems.forEach(item => {
+            if (item.getAttribute('href') === currentPath) {
+              item.parentElement.classList.add('active');
+            } else {
+              item.parentElement.classList.remove('active');
+            }
+          });
+        })
+        .catch(error => console.error('Error loading header:', error));
+    </script>
+    
+    <div class="site-blocks-cover" style="background-image: url('images/hero_1.jpg');">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 mx-auto order-lg-2 align-self-center">
+            <div class="site-block-cover-content text-center">
+              <h2 class="sub-title"> </h2>
+              <h1>Bienvenue à BIOPHARM</h1>
+              <p>
+                <a href="shop.html" class="btn btn-primary px-5 py-3">Acheter Maintenant</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row align-items-stretch section-overlap">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="banner-wrap bg-primary h-100">
+              <a href="#" class="h-100">
+                <h5>Livraison Gratuite</h5>
+                <p>
+                  "Profitez de la livraison gratuite sur toutes vos commandes !"
+                  <strong> </strong>
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="banner-wrap h-100">
+              <a href="#" class="h-100">
+                <h5>Promotion De Saison -50%</h5>
+                <p>
+                  "Obtenez jusqu'à -50% sur une sélection de produits. Offre limitée !"
+                  <strong> </strong>
+                </p>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+            <div class="banner-wrap bg-warning h-100">
+              <a href="#" class="h-100">
+                <h5>Acheter Une Carte Cadeau</h5>
+                <p>
+                  "Offrez la liberté de choix avec nos cartes cadeaux !"
+                  <strong></strong>
+                </p>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="title-section text-center col-12">
+            <h2 class="text-uppercase">Produits Populaires</h2>
+          </div>
+        </div>
+
+        <div class="row" id="popular-products">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+        <div class="row mt-5">
+          <div class="col-12 text-center">
+            <a href="shop.html" class="btn btn-primary px-4 py-3">Voir Tous Les Produits</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="title-section text-center col-12">
+            <h2 class="text-uppercase">Nouveaux Produits</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 block-3 products-wrap">
+            <div class="nonloop-block-3 owl-carousel">
+
+              <div class="text-center item mb-4">
+                <a href="shop-single.html"> <img src="images/product_03.png" alt="Image"></a>
+                <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
+                <p class="price">$120.00</p>
+              </div>
+
+              <div class="text-center item mb-4">
+                <a href="shop-single.html"> <img src="images/product_01.png" alt="Image"></a>
+                <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
+                <p class="price">$120.00</p>
+              </div>
+
+              <div class="text-center item mb-4">
+                <a href="shop-single.html"> <img src="images/product_02.png" alt="Image"></a>
+                <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
+                <p class="price">$120.00</p>
+              </div>
+
+              <div class="text-center item mb-4">
+                <a href="shop-single.html"> <img src="images/product_04.png" alt="Image"></a>
+                <h3 class="text-dark"><a href="shop-single.html">Umcka Cold Care</a></h3>
+                <p class="price">$120.00</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="title-section text-center col-12">
+            <h2 class="text-uppercase">Témoignages</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 block-3 products-wrap">
+            <div class="nonloop-block-3 no-direction owl-carousel">
+        
+              <div class="testimony">
+                <blockquote>
+                  <img src="images/person_1.jpg" alt="Image" class="img-fluid w-25 mb-4 rounded-circle">
+                  <p>&ldquo;"Un service excellent et des produits de qualité ! Je recommande sans hésiter."&rdquo;</p>
+                </blockquote>
+
+                <p>&mdash; Kelly Holmes</p>
+              </div>
+        
+              <div class="testimony">
+                <blockquote>
+                  <img src="images/person_2.jpg" alt="Image" class="img-fluid w-25 mb-4 rounded-circle">
+                  <p>&ldquo;"Commande facile, livraison rapide et conforme à mes attentes. Très satisfaite !"&rdquo;</p>
+                </blockquote>
+              
+                <p>&mdash; Rebecca Morando</p>
+              </div>
+        
+              <div class="testimony">
+                <blockquote>
+                  <img src="images/person_3.jpg" alt="Image" class="img-fluid w-25 mb-4 rounded-circle">
+                  <p>&ldquo;"Des produits efficaces et un support client à l’écoute. Une très bonne expérience."&rdquo;</p>
+                </blockquote>
+              
+                <p>&mdash; Lucas Gallone</p>
+              </div>
+        
+              <div class="testimony">
+                <blockquote>
+                  <img src="images/person_4.jpg" alt="Image" class="img-fluid w-25 mb-4 rounded-circle">
+                  <p>&ldquo;"Franchement, une expérience incroyable ! Des produits de super qualité,un service client au top. Honnêtement, je recommande à 1000% !"&rdquo;</p>
+                </blockquote>
+              
+                <p>&mdash; Andrew Neel</p>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section bg-secondary bg-image" style="background-image: url('images/bg_2.jpg');">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_1.jpg');">
+           
+            </a>
+          </div>
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_2.jpg');">
+              
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+            <div class="block-7">
+              <h3 class="footer-heading mb-4">À propos de nous</h3>
+              <p>Biopharm, fondé en 1991, est un groupe pharmaceutique algérien détenant 13 % du marché et exportant en Afrique. Il fabrique 130 produits et est certifié aux normes européennes.</p>
+            </div>
+
+          </div>
+          <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+            <h3 class="footer-heading mb-4">Liens rapides</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://www.facebook.com/laboratoiresbiopharm" target="_blank">Facebook</a></li>
+              <li><a href="https://www.instagram.com/leslaboratoiresbiopharm/" target="_blank">Instagram</a></li>
+              <li><a href="https://dz.linkedin.com/company/biopharmdz" target="_blank">LinkedIn</a></li>
+              <li><a href="https://www.youtube.com/@laboratoiresbiopharm1348" target="_blank">YouTube</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-5 mb-5">
+              <h3 class="footer-heading mb-4">Infos de contact</h3>
+              <ul class="list-unstyled">
+                <li class="address"><a href="https://www.google.com/maps/search/?api=1&query=18%2C%20rue%20de%20zone%20industrielle%20route%20de%20la%20gare%2C%20Houch%20Mahiéddine%2C%20Reghaia%20-%20Alger%2016000%2C%20Algerie.." target="_blank">18, rue de zone industrielle route de la gare, Houch Mahiéddine, Reghaia - Alger 16000, Algerie..</a></li>
+                <li class="phone"><a href="tel:0238510109">023 85 10 109</a></li>
+                <li class="email"><a href="mailto:pharmavie@gmail.com">contact@biopharm.dz</a></li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+  <script>
+    fetch('medicaments.json')
+      .then(response => response.json())
+      .then(data => {
+        const popularProductsContainer = document.getElementById('popular-products');
+        const newProductsContainer = document.getElementById('new-products');
+
+        // Limit popular products to 3 items
+        data.slice(0, 3).forEach(medicament => {
+          const item = document.createElement('div');
+          item.className = 'col-sm-6 col-lg-4 text-center item mb-4';
+          item.innerHTML = `
+            <div class="card shadow-sm" style="border-radius: 10px; overflow: hidden;">
+              <a href="shop-single.html?img=${medicament.image}">
+                <img src="${medicament.image}" class="card-img-top" alt="${medicament.name}" style="height: 200px; object-fit: cover;">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title"><a href="shop-single.html?img=${medicament.image}" class="text-dark">${medicament.name}</a></h5>
+                <p class="card-text text-primary font-weight-bold">$${medicament.price.toFixed(2)}</p>
+              </div>
+            </div>
+          `;
+          popularProductsContainer.appendChild(item);
+        });
+
+        // Keep new products section unchanged
+        data.forEach(medicament => {
+          const newItem = document.createElement('div');
+          newItem.className = 'text-center item mb-4';
+          newItem.innerHTML = `
+            <div class="card shadow-sm" style="border-radius: 10px; overflow: hidden;">
+              <a href="shop-single.html?img=${medicament.image}">
+                <img src="${medicament.image}" class="card-img-top" alt="${medicament.name}" style="height: 200px; object-fit: cover;">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title"><a href="shop-single.html?img=${medicament.image}" class="text-dark">${medicament.name}</a></h5>
+                <p class="card-text text-primary font-weight-bold">$${medicament.price.toFixed(2)}</p>
+              </div>
+            </div>
+          `;
+          newProductsContainer.appendChild(newItem);
+        });
+      })
+      .catch(error => console.error('Error loading medicaments:', error));
+  </script>
+</body>
+
+</html>

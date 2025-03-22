@@ -1,0 +1,10 @@
+// only for the first time
+git init
+
+
+// each time
+git add .
+git commit -m "Initial commit"
+
+// in the end of the work
+git push -u origin main

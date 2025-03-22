@@ -1,0 +1,332 @@
+[
+  {
+    "name": "Asperine",
+    "price": 30.00,
+    "description": "",
+    "image": "images/biopharm_products/cardio/Asperine.jpg",
+    "DCI": "Acetylsalicylic Acid",
+    "dosage": "500 mg",
+    "forme": "Tablet",
+    "category": "Cardiovasculaire et métabolisme"
+  },
+  {
+    "name": "Ioresta",
+    "price": 60.00,
+    "description": "Ioresta",
+    "image": "images/biopharm_products/cardio/Loresta.jpg",
+    "DCI": "Losartan",
+    "dosage": "50 mg",
+    "forme": "Tablet",
+    "category": "Cardiovasculaire et métabolisme"
+  },
+  {
+    "name": "Biopexa",
+    "price": 45.00,
+    "description": "Biopexa",
+    "image": "images/biopharm_products/cardio/Biopexa.jpg",
+    "DCI": "Bisoprolol",
+    "dosage": "10 mg",
+    "forme": "Tablet",
+    "category": "Cardiovasculaire et métabolisme"
+  },
+  {
+    "name": "Irbevel",
+    "price": 55.00,
+    "description": "Irbevel",
+    "image": "images/biopharm_products/cardio/Irbevel.jpg",
+    "DCI": "Irbesartan",
+    "dosage": "150 mg",
+    "forme": "Tablet",
+    "category": "Cardiovasculaire et métabolisme"
+  },
+  {
+    "name": "Moxotens",
+    "price": 70.00,
+    "description": "Moxotens",
+    "image": "images/biopharm_products/cardio/Moxotens.jpg",
+    "DCI": "Moxonidine",
+    "dosage": "0.3 mg",
+    "forme": "Tablet",
+    "category": "Cardiovasculaire et métabolisme"
+  },
+  {
+    "name": "Apaisa",
+    "price": 50.00,
+    "description": "Apaisa",
+    "image": "images/biopharm_products/Dermatologie/Apaisa.jpg",
+    "DCI": "Various",
+    "dosage": "100 ml",
+    "forme": "Cream",
+    "category": "Dermatologie"
+  },
+  {
+    "name": "Biomla",
+    "price": 45.00,
+    "description": "Biomla",
+    "image": "images/biopharm_products/Dermatologie/Biomla.jpg",
+    "DCI": "Various",
+    "dosage": "50 ml",
+    "forme": "Cream",
+    "category": "Dermatologie"
+  },
+  {
+    "name": "Clotasol Crm",
+    "price": 60.00,
+    "description": "Clotasol Crm",
+    "image": "images/biopharm_products/Dermatologie/Clotasol_Crm.jpg",
+    "DCI": "Clobetasol",
+    "dosage": "30 g",
+    "forme": "Cream",
+    "category": "Dermatologie"
+  },
+  {
+    "name": "Clotasol Pmd",
+    "price": 65.00,
+    "description": "Clotasol Pmd",
+    "image": "images/biopharm_products/Dermatologie/Clotasol_Pmd.jpg",
+    "DCI": "Clobetasol",
+    "dosage": "30 g",
+    "forme": "Pomade",
+    "category": "Dermatologie"
+  },
+  {
+    "name": "Terbinan",
+    "price": 70.00,
+    "description": "Terbinan",
+    "image": "images/biopharm_products/Dermatologie/Terbinan.jpg",
+    "DCI": "Terbinafine",
+    "dosage": "250 mg",
+    "forme": "Tablet",
+    "category": "Dermatologie"
+  },
+  {
+    "name": "Bionorm",
+    "price": 85.00,
+    "description": "Bionorm",
+    "image": "images/biopharm_products/Diabétologie/Bionorm.jpg",
+    "DCI": "Metformin",
+    "dosage": "850 mg",
+    "forme": "Tablet",
+    "category": "Diabétologie"
+  },
+  {
+    "name": "Corect",
+    "price": 95.00,
+    "description": "Corect",
+    "image": "images/biopharm_products/Diabétologie/Corect.jpg",
+    "DCI": "Gliclazide",
+    "dosage": "80 mg",
+    "forme": "Tablet",
+    "category": "Diabétologie"
+  },
+  {
+    "name": "Glatix",
+    "price": 105.00,
+    "description": "Glatix",
+    "image": "images/biopharm_products/Diabétologie/Glatix.jpg",
+    "DCI": "Glimepiride",
+    "dosage": "4 mg",
+    "forme": "Tablet",
+    "category": "Diabétologie"
+  },
+  {
+    "name": "Esomac",
+    "price": 75.00,
+    "description": "Esomac",
+    "image": "images/biopharm_products/Gastrologie/Esomac.jpg",
+    "DCI": "Esomeprazole",
+    "dosage": "40 mg",
+    "forme": "Tablet",
+    "category": "Gastrologie"
+  },
+  {
+    "name": "Lomac",
+    "price": 65.00,
+    "description": "Lomac",
+    "image": "images/biopharm_products/Gastrologie/Lomac.jpg",
+    "DCI": "Omeprazole",
+    "dosage": "20 mg",
+    "forme": "Tablet",
+    "category": "Gastrologie"
+  },
+  {
+    "name": "Melaza",
+    "price": 80.00,
+    "description": "Melaza",
+    "image": "images/biopharm_products/Gastrologie/Melaza.jpg",
+    "DCI": "Lactulose",
+    "dosage": "10 g/15 ml",
+    "forme": "Syrup",
+    "category": "Gastrologie"
+  },
+  {
+    "name": "Nopac",
+    "price": 70.00,
+    "description": "Nopac",
+    "image": "images/biopharm_products/Gastrologie/Nopac.jpg",
+    "DCI": "Pantoprazole",
+    "dosage": "40 mg",
+    "forme": "Tablet",
+    "category": "Gastrologie"
+  },
+  {
+    "name": "Nopac Siroup",
+    "price": 85.00,
+    "description": "Nopac Siroup",
+    "image": "images/biopharm_products/Gastrologie/Nopac_Siroup.jpg",
+    "DCI": "Pantoprazole",
+    "dosage": "40 mg/5 ml",
+    "forme": "Syrup",
+    "category": "Gastrologie"
+  },
+  {
+    "name": "Mexam",
+    "price": 90.00,
+    "description": "Mexam",
+    "image": "images/biopharm_products/Pneumo-allergologie/Mexam.jpg",
+    "DCI": "Montelukast",
+    "dosage": "10 mg",
+    "forme": "Tablet",
+    "category": "Pneumo-allergologie"
+  },
+  {
+    "name": "Rynza Fumigation",
+    "price": 100.00,
+    "description": "Rynza Fumigation",
+    "image": "images/biopharm_products/Pneumo-allergologie/Rynza_Fumigation.jpg",
+    "DCI": "Various",
+    "dosage": "N/A",
+    "forme": "Fumigation",
+    "category": "Pneumo-allergologie"
+  },
+  {
+    "name": "Rynza Nasal",
+    "price": 95.00,
+    "description": "Rynza Nasal",
+    "image": "images/biopharm_products/Pneumo-allergologie/Rynza_Nasal.jpg",
+    "DCI": "Various",
+    "dosage": "N/A",
+    "forme": "Nasal Spray",
+    "category": "Pneumo-allergologie"
+  },
+  {
+    "name": "Tyrizal",
+    "price": 85.00,
+    "description": "Tyrizal",
+    "image": "images/biopharm_products/Pneumo-allergologie/Tyrizal.jpg",
+    "DCI": "Levocetirizine",
+    "dosage": "5 mg",
+    "forme": "Tablet",
+    "category": "Pneumo-allergologie"
+  },
+  {
+    "name": "Zecuf",
+    "price": 75.00,
+    "description": "Zecuf",
+    "image": "images/biopharm_products/Pneumo-allergologie/Zecuf.jpg",
+    "DCI": "Various",
+    "dosage": "N/A",
+    "forme": "Syrup",
+    "category": "Pneumo-allergologie"
+  },
+  {
+    "name": "Dozax",
+    "price": 60.00,
+    "description": "Dozax",
+    "image": "images/biopharm_products/Psychiatrie/Dozax.jpg",
+    "DCI": "Doxepin",
+    "dosage": "25 mg",
+    "forme": "Tablet",
+    "category": "Psychiatrie"
+  },
+  {
+    "name": "Nozinan",
+    "price": 70.00,
+    "description": "Nozinan",
+    "image": "images/biopharm_products/Psychiatrie/Nozinan.jpg",
+    "DCI": "Levomepromazine",
+    "dosage": "100 mg",
+    "forme": "Tablet",
+    "category": "Psychiatrie"
+  },
+  {
+    "name": "Rispal",
+    "price": 80.00,
+    "description": "Rispal",
+    "image": "images/biopharm_products/Psychiatrie/Rispal.jpg",
+    "DCI": "Risperidone",
+    "dosage": "2 mg",
+    "forme": "Tablet",
+    "category": "Psychiatrie"
+  },
+  {
+    "name": "Venifax",
+    "price": 90.00,
+    "description": "Venifax",
+    "image": "images/biopharm_products/Psychiatrie/Venifax.jpg",
+    "DCI": "Venlafaxine",
+    "dosage": "75 mg",
+    "forme": "Tablet",
+    "category": "Psychiatrie"
+  },
+  {
+    "name": "Vilbar",
+    "price": 85.00,
+    "description": "Vilbar",
+    "image": "images/biopharm_products/Psychiatrie/Vilbar.jpg",
+    "DCI": "Vilazodone",
+    "dosage": "10 mg",
+    "forme": "Tablet",
+    "category": "Psychiatrie"
+  },
+  {
+    "name": "Biofenac",
+    "price": 50.00,
+    "description": "Biofenac",
+    "image": "images/biopharm_products/Rhumatologie/Biofenac.jpg",
+    "DCI": "Aceclofenac",
+    "dosage": "100 mg",
+    "forme": "Tablet",
+    "category": "Rhumatologie"
+  },
+  {
+    "name": "Biofenac Gel",
+    "price": 45.00,
+    "description": "Biofenac Gel",
+    "image": "images/biopharm_products/Rhumatologie/Biofenac_Gel.jpg",
+    "DCI": "Aceclofenac",
+    "dosage": "1.5%",
+    "forme": "Gel",
+    "category": "Rhumatologie"
+  },
+  {
+    "name": "Celetasone",
+    "price": 60.00,
+    "description": "Celetasone",
+    "image": "images/biopharm_products/Rhumatologie/Celetasone.jpg",
+    "DCI": "Betamethasone",
+    "dosage": "0.5 mg",
+    "forme": "Tablet",
+    "category": "Rhumatologie"
+  },
+  {
+    "name": "Dromax",
+    "price": 70.00,
+    "description": "Dromax",
+    "image": "images/biopharm_products/Rhumatologie/Dromax.jpg",
+    "DCI": "Dexketoprofen",
+    "dosage": "25 mg",
+    "forme": "Tablet",
+    "category": "Rhumatologie"
+  },
+  {
+    "name": "Xamadol",
+    "price": 80.00,
+    "description": "Xamadol",
+    "image": "images/biopharm_products/Rhumatologie/Xamadol.jpg",
+    "DCI": "Tramadol",
+    "dosage": "50 mg",
+    "forme": "Tablet",
+    "category": "Rhumatologie"
+  }
+]

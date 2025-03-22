@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> site web Biopharm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <div class="site-wrap">
+
+    <div id="header"></div>
+    <script>
+      fetch('shared/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header').innerHTML = data;
+          const currentPath = window.location.pathname.split('/').pop();
+          const menuItems = document.querySelectorAll('.site-menu a');
+          menuItems.forEach(item => {
+            if (item.getAttribute('href') === currentPath) {
+              item.parentElement.classList.add('active');
+            } else {
+              item.parentElement.classList.remove('active');
+            }
+          });
+        })
+        .catch(error => console.error('Erreur lors du chargement de l\'en-tête:', error));
+    </script>
+
+    <!-- Remove the breadcrumb navigation -->
+    <!-- <div class="bg-light py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 mb-0">
+            <a href="index.html">Home</a> <span class="mx-2 mb-0">/</span>
+            <strong class="text-black">Contact</strong>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="h3 mb-5 text-black">Contactez-nous</h2>
+          </div>
+          <div class="col-md-12">
+    
+            <form action="#" method="post" enctype="multipart/form-data">
+              <div class="p-3 p-lg-5 border">
+                <!-- Hidden fields for user info -->
+                <input type="hidden" id="c_fname" name="c_fname">
+                <input type="hidden" id="c_lname" name="c_lname">
+                <input type="hidden" id="c_email" name="c_email">
+    
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_subject" class="text-black">Sujet </label>
+                    <input type="text" class="form-control" id="c_subject" name="c_subject">
+                  </div>
+                </div>
+    
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_message" class="text-black">Message </label>
+                    <textarea name="c_message" id="c_message" cols="30" rows="7" class="form-control"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-md-12">
+                    <label for="c_photo" class="text-black">Photo du produit (optionnel)</label>
+                    <input type="file" class="form-control" id="c_photo" name="c_photo" accept="image/*" multiple>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-lg-12">
+                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Envoyer le message">
+                  </div>
+                </div>
+              </div>
+            </form>
+            
+            <script>
+              // Add this after the form to populate user data
+              document.addEventListener('DOMContentLoaded', function() {
+                // Get user data from session/localStorage or your auth system
+                const user = JSON.parse(localStorage.getItem('user')); // Adjust this according to your auth implementation
+                
+                if (user) {
+                  document.getElementById('c_fname').value = user.firstName || '';
+                  document.getElementById('c_lname').value = user.lastName || '';
+                  document.getElementById('c_email').value = user.email || '';
+                } else {
+               
+                }
+              });
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="site-section bg-primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-white mb-4">Bureaux</h2>
+          </div>
+          <div class="col-lg-4">
+            <div class="p-4 bg-white mb-3 rounded">
+              <span class="d-block text-black h6 text-uppercase">
+                <a href="https://www.google.com/maps/search/?api=1&query=18%2C%20rue%20de%20zone%20industrielle%20route%20de%20la%20gare%2C%20Houch%20Mahi%C3%A9ddine%2C%20Reghaia%20-%20Alger%2016000%2C%20Algerie.." target="_blank">BIOPHARM LOGISTIC</a>
+              </span>
+              <p class="mb-0">Toutes opérations immobilières, achat, vente, construction, promotion, gestion de la logistique.Reghaia, Alger, Algérie
+                </p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="p-4 bg-white mb-3 rounded">
+              <span class="d-block text-black h6 text-uppercase">
+                <a href="https://www.google.com/maps/dir//Biopharm+P664%2BJCR+ZI+Oued+Smar/@36.711581,3.1236078,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x128e51ba2b773055:0xa6cebc6adf13b735!2m2!1d3.2060096!2d36.7116094?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">BIOPHARM SPA</a>
+              </span>
+              <p class="mb-0">Fabrication des produits pharmaceutiques. Alger, Algérie</p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="p-4 bg-white mb-3 rounded">
+              <span class="d-block text-black h6 text-uppercase">
+                <a href="https://www.google.com/maps/dir//BIOPUREspa+GV63%2B4XC+Ouled+Ya%C3%AFch+09100/@36.5103109,2.854892,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x128f0be09455488b:0x612e1579271b03b7!2m2!1d2.854892!2d36.5103109?entry=ttu&g_ep=EgoyMDI1MDMwOC4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D" target="_blank">BIOPURE</a>
+              </span>
+              <p class="mb-0"> Distribution aux officines des produits pharmaceutiques. Yaich, Blida 16000, Algérie</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+            <di class="block-7">
+              <h3 class="footer-heading mb-4">À propos de nous</h3>
+              <p>Biopharm, fondé en 1991, est un groupe pharmaceutique algérien détenant 13 % du marché et exportant en Afrique. Il fabrique 130 produits et est certifié aux normes européennes.</p>
+            
+          </div>
+          <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+            <h3 class="footer-heading mb-4">Liens rapides</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://www.facebook.com/laboratoiresbiopharm" target="_blank">Facebook</a></li>
+              <li><a href="https://www.instagram.com/leslaboratoiresbiopharm/" target="_blank">Instagram</a></li>
+              <li><a href="https://dz.linkedin.com/company/biopharmdz" target="_blank">LinkedIn</a></li>
+              <li><a href="https://www.youtube.com/@laboratoiresbiopharm1348" target="_blank">YouTube</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-5 mb-5">
+              <h3 class="footer-heading mb-4">Infos de contact</h3>
+              <ul class="list-unstyled">
+                <li class="address"><a href="https://www.google.com/maps/search/?api=1&query=18%2C%20rue%20de%20zone%20industrielle%20route%20de%20la%20gare%2C%20Houch%20Mahiéddine%2C%20Reghaia%20-%20Alger%2016000%2C%20Algerie.." target="_blank">18, rue de zone industrielle route de la gare, Houch Mahiéddine, Reghaia - Alger 16000, Algerie..</a></li>
+                <!-- Modified phone link -->
+                <li class="phone"><a href="tel:0238510109">023 85 10 109</a></li>
+                <!-- Modified email link -->
+                <li class="email"><a href="mailto:pharmavie@gmail.com">contact@biopharm.dz</a></li>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

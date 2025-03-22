@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> site web Biopharm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <div class="site-wrap">
+
+
+    <div class="site-wrap">
+
+      <div id="header"></div>
+      <script>
+        fetch('shared/header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header').innerHTML = data;
+            const currentPath = window.location.pathname.split('/').pop();
+            const menuItems = document.querySelectorAll('.site-menu a');
+            menuItems.forEach(item => {
+              if (item.getAttribute('href') === currentPath) {
+                item.parentElement.classList.add('active');
+              } else {
+                item.parentElement.classList.remove('active');
+              }
+            });
+          })
+          .catch(error => console.error('Error loading header:', error));
+      </script>
+
+    <div class="bg-light py-3">
+      <div class="container">
+         </div>
+    </div>
+    
+    <div class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <span class="icon-check_circle display-3 text-success"></span>
+            <h2 class="display-3 text-black">Merci !</h2>
+            <p class="lead mb-5">Votre commande a été effectuée avec succès.</p>
+            <p><a href="shop.html" class="btn btn-md height-auto px-4 py-3 btn-primary">Retour à le magasin</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+            <div class="block-7">
+              <h3 class="footer-heading mb-4">À propos de nous</h3>
+              <p>Biopharm, fondé en 1991, est un groupe pharmaceutique algérien détenant 13 % du marché et exportant en Afrique. Il fabrique 130 produits et est certifié aux normes européennes.</p>
+            </div>
+
+          </div>
+          <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+            <h3 class="footer-heading mb-4">Liens rapides</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://www.facebook.com/laboratoiresbiopharm" target="_blank">Facebook</a></li>
+              <li><a href="https://www.instagram.com/leslaboratoiresbiopharm/" target="_blank">Instagram</a></li>
+              <li><a href="https://dz.linkedin.com/company/biopharmdz" target="_blank">LinkedIn</a></li>
+              <li><a href="https://www.youtube.com/@laboratoiresbiopharm1348" target="_blank">YouTube</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="block-5 mb-5">
+              <h3 class="footer-heading mb-4">Informations de contact</h3>
+              <ul class="list-unstyled">
+                <li class="address"><a href="https://www.google.com/maps/search/?api=1&query=18%2C%20rue%20de%20zone%20industrielle%20route%20de%20la%20gare%2C%20Houch%20Mahiéddine%2C%20Reghaia%20-%20Alger%2016000%2C%20Algerie.." target="_blank">18, rue de zone industrielle route de la gare, Houch Mahiéddine, Reghaia - Alger 16000, Algerie..</a></li>
+                <li class="phone"><a href="tel:0238510109">023 85 10 109</a></li>
+                <li class="email"><a href="mailto:pharmavie@gmail.com">contact@biopharm.dz</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <p>
+             

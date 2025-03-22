@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <title>Pharma — Modèle Colorlib</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Rubik:400,700|Crimson+Text:400,400i" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <div class="site-wrap">
+
+    <div id="header"></div>
+    <script>
+      fetch('shared/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header').innerHTML = data;
+          const currentPath = window.location.pathname.split('/').pop();
+          const menuItems = document.querySelectorAll('.site-menu a');
+          menuItems.forEach(item => {
+            if (item.getAttribute('href') === currentPath) {
+              item.parentElement.classList.add('active');
+            } else {
+              item.parentElement.classList.remove('active');
+            }
+          });
+
+          const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+          document.getElementById('cart-count').textContent = cartItems.length;
+        })
+        .catch(error => console.error('Error loading header:', error));
+    </script>
+
+    <div class="site-section">
+      <div class="container">
+        <div class="row mb-5">
+          <form class="col-md-12" method="post">
+            <div class="site-blocks-table">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th class="product-thumbnail">Image</th>
+                    <th class="product-name">Produit</th>
+                    <th class="product-price">Prix</th>
+                    <th class="product-quantity">Quantité</th>
+                    <th class="product-total">Total</th>
+                    <th class="product-remove">Supprimer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Le contenu dynamique sera inséré ici par JavaScript -->
+                </tbody>
+              </table>
+            </div>
+          </form>
+        </div>
+            
+        <div class="row">
+          <div class="col-md-6">
+            <div class="row mb-5">
+              <div class="col-md-6 mb-3 mb-md-0">
+                <button class="btn btn-outline-primary btn-md btn-block" onclick="window.location='shop.html'">Continuer vos achats</button>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                
+              </div>
+               
+              
+            </div>
+          </div>
+          <div class="col-md-6 pl-5">
+            <div class="row justify-content-end">
+              <div class="col-md-7">
+                <div class="row">
+                  <div class="col-md-12 text-right border-bottom mb-5">
+                    <h3 class="text-black h4 text-uppercase">Totaux du panier</h3>
+                  </div>
+                </div>
+                <div class="row mb-5">
+                  <div class="col-md-6">
+                    <span class="text-black">Total</span>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <strong class="text-black" id="cart-total">$0.00</strong>
+                  </div>
+                </div>
+    
+                <div class="row">
+                  <div class="col-md-12">
+                    <button class="btn btn-primary btn-lg btn-block" onclick="window.location='thankyou.html'">Passer à la commande</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section bg-secondary bg-image" style="background-image: url('images/bg_2.jpg');">
+      <div class="container">
+        <div class="row align-items-stretch">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_1.jpg');">
+               
+            </a>
+          </div>
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <a href="#" class="banner-1 h-100 d-flex" style="background-image: url('images/bg_2.jpg');">
+              
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+            <div class="block-7">
+              <h3 class="footer-heading mb-4">À propos de nous</h3>
+              <p>Biopharm, fondé en 1991, est un groupe pharmaceutique algérien détenant 13 % du marché et exportant en Afrique. Il fabrique 130 produits et est certifié aux normes européennes.</p>
+            </div>
+
+          </div>
+          <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+            <h3 class="footer-heading mb-4">Liens rapides</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://www.facebook.com/laboratoiresbiopharm" target="_blank">Facebook</a></li>
+              <li><a href="https://www.instagram.com/leslaboratoiresbiopharm/" target="_blank">Instagram</a></li>
+              <li><a href="https://dz.linkedin.com/company/biopharmdz" target="_blank">LinkedIn</a></li>
+              <li><a href="https://www.youtube.com/@laboratoiresbiopharm1348" target="_blank">YouTube</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="block-5 mb-5">
+              <h3 class="footer-heading mb-4">Infos de contact</h3>
+              <ul class="list-unstyled">
+                <li class="address"><a href="https://www.google.com/maps/search/?api=1&query=18%2C%20rue%20de%20zone%20industrielle%20route%20de%20la%20gare%2C%20Houch%20Mahiéddine%2C%20Reghaia%20-%20Alger%2016000%2C%20Algerie.." target="_blank">Pharmacie Belle Vue, QWQ5+7HM, Aïn Benian</a></li>
+                <li class="phone"><a href="tel:0238510109">+213 5572195</a></li>
+                <li class="email"><a href="mailto:pharmavie@gmail.com">pharmavie@gmail.com</a></li>
+              </ul>
+            </div>
+              </ul>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const cartTableBody = document.querySelector('.site-blocks-table tbody');
+
+      function calculateTotal() {
+        return cartItems.reduce((total, item) => {
+          const price = parseFloat(item.price.replace('$', ''));
+          return total + (price * item.quantity);
+        }, 0).toFixed(2);
+      }
+
+      function updateCartTable() {
+        cartTableBody.innerHTML = '';
+        cartItems.forEach((item, index) => {
+          console.log('Image path:', item.image); // Debugging line
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td class="product-thumbnail"><img src="${item.image}" alt="Image" class="img-fluid"></td>
+            <td class="product-name"><h2 class="h5 text-black">${item.name}</h2></td>
+            <td class="product-price">${item.price}</td>
+            <td>
+              <div class="input-group mb-3" style="max-width: 120px;">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-primary js-btn-minus" type="button" data-index="${index}">&minus;</button>
+                </div>
+                <input type="text" class="form-control text-center quantity-input" value="${item.quantity}" data-index="${index}" readonly>
+                <div class="input-group-append">
+                  <button class="btn btn-outline-primary js-btn-plus" type="button" data-index="${index}">&plus;</button>
+                </div>
+              </div>
+            </td>
+            <td class="product-total">${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}$</td>
+            <td><a href="#" class="btn btn-primary height-auto btn-sm js-btn-remove" data-index="${index}">X</a></td>
+          `;
+          cartTableBody.appendChild(row);
+        });
+
+        // Add event listeners for quantity buttons
+        document.querySelectorAll('.js-btn-plus').forEach(button => {
+          button.addEventListener('click', function() {
+            const index = this.getAttribute('data-index');
+            cartItems[index].quantity++;
+            updateItem(index);
+          });
+        });
+
+        document.querySelectorAll('.js-btn-minus').forEach(button => {
+          button.addEventListener('click', function() {
+            const index = this.getAttribute('data-index');
+            if (cartItems[index].quantity > 1) {
+              cartItems[index].quantity--;
+              updateItem(index);
+            }
+          });
+        });
+
+        // Keep existing remove button handlers
+        document.querySelectorAll('.js-btn-remove').forEach(button => {
+          button.addEventListener('click', function(event) {
+            event.preventDefault();
+            const index = this.getAttribute('data-index');
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            updateCartTable();
+            
+            // Update cart count using the shared function
+            if (window.updateCartCount) {
+              window.updateCartCount();
+            }
+            
+            // Dispatch storage event for other windows
+            window.dispatchEvent(new Event('storage'));
+          });
+        });
+
+        // Update the total display
+        document.getElementById('cart-total').textContent = '$' + calculateTotal();
+      }
+
+      function updateItem(index) {
+        // Update total price
+        const price = parseFloat(cartItems[index].price.replace('$', ''));
+        cartItems[index].total = (price * cartItems[index].quantity).toFixed(2) + '$';
+        
+        // Save to localStorage
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        
+        // Update display
+        updateCartTable();
+        
+        // Update cart count
+        if (window.updateCartCount) {
+          window.updateCartCount();
+        }
+        
+        // Notify other windows
+        window.dispatchEvent(new Event('storage'));
+      }
+
+      updateCartTable();
+    });
+  </script>
+
+</body>
+
+</html>
